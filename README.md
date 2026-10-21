@@ -1,7 +1,7 @@
 <div align="center">
 
 # ⚔️ Dark Souls II — Recompilação Estática para Android (ARM64)
-### Recompilação Estática Nativa de Xbox 360 (`default.xex`) para Android AArch64 via ReXGlue SDK & Vulkan
+### Recompilação Estática Nativa de Xbox 360 para Android AArch64 via ReXGlue SDK & Vulkan
 
 [![Platform](https://img.shields.io/badge/Platform-Android%2011%2B%20(ARM64--v8a)-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#)
 [![Recompiler](https://img.shields.io/badge/Recompiler-ReXGlue%20SDK%20v0.10.0-blueviolet?style=for-the-badge&logo=c%2B%2B&logoColor=white)](#-créditos-ao-projeto-de-recompilação-rexglue)
@@ -48,23 +48,9 @@ Esta seção documenta o comportamento, desempenho e logs coletados em hardware 
 
 | Dispositivo | SoC / Processador | GPU / Arquitetura | Memória RAM | Driver Vulkan Testado | Resolução de Swapchain | Status Atual |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Motorola Moto G75 5G** (`sorap`) | **Qualcomm Snapdragon 6 Gen 3** (SM6475)<br/>• 4x Cortex-A78 @ 2.4 GHz<br/>• 4x Cortex-A55 @ 1.8 GHz | **Adreno 710** | 8 GB LPDDR4X | • System Driver: `/vendor/lib64/hw/vulkan.adreno.so`<br/>• Mesa Turnip (v24.3+) | 2388x1080 (Nativa) | 🟡 **Inicializa com Sucesso** (Áudio ativo, arena mapeada, 58 thunks corrigidos, aguardando pipeline 3D) |
-
+| **Motorola Moto G75 5G**  | **Qualcomm Snapdragon 6 Gen 3** | **Adreno 710** | 8 GB  | • System Driver: `/vendor/lib64/hw/vulkan.adreno.so`<br/>• Mesa Turnip (v24.3+) | 2388x1080 (Nativa) | 🟡 **Inicializa com Sucesso** (Áudio ativo, arena mapeada, 58 thunks corrigidos, aguardando pipeline 3D) |
+| **Samsung Galaxy M55 5G**  | **Qualcomm Snapdragon 7 Gen 1** | **Adreno 644** | 8 GB  | • System Driver: `/vendor/lib64/hw/vulkan.adreno.so`<br/>• Mesa Turnip (v24.3+) | 2388x1080 (Nativa) | 🟡 **Inicializa com Sucesso** (Áudio ativo, arena mapeada, 58 thunks corrigidos, aguardando pipeline 3D) |
 ---
-
-### 🔬 Relatório Técnico de Teste: Snapdragon 6 Gen 3 (Adreno 710)
-
-O **Snapdragon 6 Gen 3** com GPU **Adreno 710** é o dispositivo de referência primário utilizado no desenvolvimento deste port.
-
-```text
-[Hardware Info]
-Fabricante: Motorola
-Modelo: Moto G75 5G (Dispositivo: sorap)
-SoC: Qualcomm Snapdragon 6 Gen 3 (4nm)
-GPU: Adreno 710
-Vulkan API: 1.3
-Orientação: Paisagem (Landscape 2388x1080)
-```
 
 #### Marcos de Execução Validados no Dispositivo:
 1. **Inicialização do Runtime Nativo & SDL3:**
@@ -99,7 +85,6 @@ Este projeto só é possível graças ao esforço extraordinário e à engenhari
 * **[FromSoftware](https://www.fromsoftware.jp/)** — Desenvolvedores do lendário *Dark Souls II*.
 * **[Bylaws / AdrenoTools](https://github.com/bylaws/libadrenotools)** — Ferramenta essencial que viabilizou a substituição de drivers Vulkan (Mesa Turnip) e ativação de Turbo Clocks em GPUs Adreno no Android.
 * **[libSDL / SDL3](https://github.com/libsdl-org/SDL)** — Criação de janelas, superfícies Vulkan e gerenciamento de entrada multiplataforma para o ecossistema Android.
-* **[zFitness / gow3_android](https://github.com/zFitness/gow3_android)** — Inspiração técnica pela organização de projetos de portes nativos/recompilações no ambiente Android ARM64.
 * **Equipe LLVM & Clang** — Pelo suporte a compiladores de ponta e geração de código vetorial AArch64 otimizado.
 
 ---
