@@ -1,0 +1,50 @@
+# Git Ignore for Dark Souls II Android Recomp
+
+# Build directories & intermediates
+build/
+build-android/
+.gradle/
+app/build/
+intermediates/
+out/
+
+# Compiled native libraries & binaries (Upload APKs to GitHub Releases instead!)
+*.apk
+*.so
+*.a
+*.o
+*.obj
+*.dll
+*.dylib
+*.exe
+
+# CMake & Ninja artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+.ninja_deps
+.ninja_log
+*.ninja
+
+# Toolchains, SDKs & local tools
+tools/
+rexglue-sdk/
+libadrenotools/
+
+# Copyrighted game files (DO NOT UPLOAD TO GITHUB)
+*.xex
+*.bdt
+*.bhd
+*.iso
+*.rar
+*.zip
+*.7z
+
+# IDE & OS temporary files
+.idea/
+.vscode/
+local.properties
+*.iml
+.DS_Store
+Thumbs.db

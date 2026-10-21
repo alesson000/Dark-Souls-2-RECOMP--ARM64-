@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#12151b"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📜 Console de Logs (Logcat)"
+        android:textColor="#f59e0b"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <ScrollView
+        android:id="@+id/svLogScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0b0d11"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvLogContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#a7f3d0"
+            android:textSize="11sp"
+            android:typeface="monospace"
+            android:textIsSelectable="true"
+            android:text="Carregando logs do sistema..." />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:id="@+id/btnDialogCopy"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="📋 Copiar"
+            android:textColor="#f3f4f6"
+            android:background="@drawable/btn_secondary"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnDialogClear"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="🗑 Limpar"
+            android:textColor="#f87171"
+            android:background="@drawable/btn_secondary"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnDialogClose"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Fechar"
+            android:textColor="#f3f4f6"
+            android:background="@drawable/btn_secondary"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+</LinearLayout>

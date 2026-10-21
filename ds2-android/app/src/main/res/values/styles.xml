@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fullscreen Game Theme for SDLActivity -->
+    <style name="AppTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <!-- Dark Souls 2 Launcher Menu Theme -->
+    <style name="LauncherTheme" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#12151b</item>
+        <item name="android:textColorPrimary">#f3f4f6</item>
+        <item name="android:textColorSecondary">#9ca3af</item>
+        <item name="android:colorAccent">#f59e0b</item>
+        <item name="android:navigationBarColor">#12151b</item>
+        <item name="android:statusBarColor">#12151b</item>
+    </style>
+</resources>

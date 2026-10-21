@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#12151b"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with Dark Souls II Logo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="14dp">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/ds2_banner"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DARK SOULS™ II"
+                android:textColor="#f59e0b"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xbox 360 Recompilation • ARM64 Android"
+                android:textColor="#9ca3af"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AdrenoTools • Snapdragon 6 Gen 3 / Adreno 710 • Vulkan"
+                android:textColor="#60a5fa"
+                android:textSize="11sp"
+                android:background="@drawable/badge_bg"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/tvBuildVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versão 1.0.10 (Secondary VTables and Adjusters Fix)"
+                android:textColor="#34d399"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <!-- Card 1: Arquivos do Jogo (.ISO ou Pasta) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📁 Arquivos do Jogo (Pasta ou .ISO)"
+                android:textColor="#f3f4f6"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvGamePath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/sdcard/DarkSouls2"
+                android:textColor="#93c5fd"
+                android:textSize="12sp"
+                android:background="@drawable/badge_bg"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tvGameStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verificando arquivos..."
+                android:textColor="#10b981"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSelectFolder"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="📁 Selecionar Pasta"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_secondary"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnInstallIso"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="💿 Instalar .ISO"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_secondary"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card 2: Gerenciador de Drivers Turnip e Sistema -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ Driver Gráfico Vulkan (GPU)"
+                android:textColor="#f3f4f6"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione o driver Vulkan ativo:"
+                android:textColor="#9ca3af"
+                android:textSize="12sp"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Spinner de Drivers Instalados -->
+            <Spinner
+                android:id="@+id/spnDrivers"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@drawable/badge_bg"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvDriverInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualcomm Adreno Vulkan (Driver Padrão)"
+                android:textColor="#60a5fa"
+                android:textSize="11sp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnInstallDriver"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:text="➕ Instalar Novo Driver (.zip/.so)"
+                    android:textColor="#ffffff"
+                    android:textSize="11sp"
+                    android:background="@drawable/btn_secondary"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnDeleteDriver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:text="🗑 Excluir"
+                    android:textColor="#ef4444"
+                    android:textSize="11sp"
+                    android:background="@drawable/btn_secondary"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card 3: Performance & Configurações -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙ Configurações de Desempenho"
+                android:textColor="#f3f4f6"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exibir Contador de FPS &amp; HUD"
+                        android:textColor="#e5e7eb"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mostra FPS e tempos de quadro na tela"
+                        android:textColor="#9ca3af"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/swShowFps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#222734"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turbo GPU Clocks (Adreno 710)"
+                        android:textColor="#e5e7eb"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Força frequência máxima na GPU Snapdragon"
+                        android:textColor="#9ca3af"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/swTurbo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Card 4: Logs & Diagnóstico -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📋 Diagnóstico &amp; Logs do Sistema"
+                android:textColor="#f3f4f6"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvLogSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logs recentes disponíveis para visualização."
+                android:textColor="#9ca3af"
+                android:textSize="11sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnViewLogs"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="📜 Ver Logs"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_secondary"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnCopyLogs"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="📋 Copiar Logs"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:background="@drawable/btn_secondary"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Botão Jogar Principal -->
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="▶ JOGAR DARK SOULS II"
+            android:textColor="#12151b"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:background="@drawable/btn_play"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
