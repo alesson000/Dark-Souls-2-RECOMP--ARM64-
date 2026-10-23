@@ -170,14 +170,14 @@ O APK final será gerado em:
 - [x] Portabilidade das bibliotecas de suporte para a Bionic libc do Android.
 - [x] Criação de arena de memória virtual de 4.8 GB com `memfd_create`.
 - [x] Integração da camada gráfica Vulkan 1.3 nativa via SDL3.
-- [x] Integração da biblioteca `libadrenotools` com Turbo Clocks para Adreno 710.
+- [x] Integração da biblioteca `libadrenotools` com Turbo Clocks para GPUs Adreno.
 - [x] Inicialização do subsistema de áudio (`Low latency audio enabled`).
 - [x] Resolução de 58 adjuster thunks e métodos virtuais de 5 clusters essenciais.
 - [x] Mapeamento e suporte a controles touch overlay na tela e joysticks Bluetooth/USB.
 - [ ] Conclusão do loop de renderização 3D e rasterização de shaders no Vulkan.
-- [ ] UI Rework
-- [ ] GPUs Mali (exynos, unisoc, mediatek)
-- [ ] Save Game
+- [ ] UI Rework.
+- [ ] GPUs Mali (exynos, unisoc, mediatek).
+- [ ] Save Game.
 - [ ] Otimizações de frametime e sincronização de apresentação de quadros.
 
 ---
