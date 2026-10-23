@@ -173,8 +173,11 @@ O APK final será gerado em:
 - [x] Integração da biblioteca `libadrenotools` com Turbo Clocks para Adreno 710.
 - [x] Inicialização do subsistema de áudio (`Low latency audio enabled`).
 - [x] Resolução de 58 adjuster thunks e métodos virtuais de 5 clusters essenciais.
+- [x] Mapeamento e suporte a controles touch overlay na tela e joysticks Bluetooth/USB.
 - [ ] Conclusão do loop de renderização 3D e rasterização de shaders no Vulkan.
-- [ ] Mapeamento e suporte a controles touch overlay na tela e joysticks Bluetooth/USB.
+- [ ] UI Rework
+- [ ] GPUs Mali (exynos, unisoc, mediatek)
+- [ ] Save Game
 - [ ] Otimizações de frametime e sincronização de apresentação de quadros.
 
 ---
